@@ -1,0 +1,139 @@
+
+/* product detail page */
+
+.Product{
+  padding-top: 120px;
+  width: 90%;
+  margin: auto;
+  display: flex;
+}
+
+  
+  
+  .productAddToCart{
+    width: 40%;
+    padding-left: 40px;
+  }
+  
+  
+  .product-title{
+    display: inline-block;
+    width: 85%;
+    padding: 20px 0;
+  }
+  
+  #favorite-btn{
+    display: inline-block;
+    background-color: white;
+    border: none;
+    color: black;
+    border-radius: 90px;
+    width: 30px;
+    height: 30px;
+    padding: 0px;
+    margin-left: 4px;
+  }
+  
+  .option-container{
+    padding: 20px 0;
+  }
+  
+  .delivery-method-container{
+    padding: 20px 0;
+  }
+  .delivery-method-label{
+    display:flex;
+    justify-content: space-between;
+  }
+  
+  .delivery-method-availability{
+    padding: 18px;
+    border: solid 1px;
+    border-radius: 10px;
+    margin: 4px 0;
+  }
+  
+  
+  
+  .package-delivery-header, .pickup-delivery-header{
+    padding: 4px 10px;
+    display: flex;
+  }
+  
+  .package-delivery-header h4, .pickup-delivery-header h4{
+    margin-left: 10px;
+  }
+  
+  .package-delivery-body, .pickup-delivery-body{
+    margin-left: 40px;
+    font-size: 14px;
+  }
+  .available-icon{
+    font-size: 14px;
+    padding: 2px;
+    color: green;
+    font-variation-settings: 'FILL' 1, 'wght' 200;
+  }
+  
+  
+  .add-to-bag-btns{
+    background-color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin: 0;
+    display: flex;
+    justify-content:space-evenly;
+  }
+  
+  .add-to-bag-btns button{
+    font-weight: bold;
+  }
+  
+  .add-to-bag-quantity{
+    display: flex;
+    justify-content: space-evenly;
+    border: solid 1px;
+    border-radius: 4px;
+    font-weight: 600;
+  }
+  .add-to-bag-quantity p{
+    margin: auto 20px;
+  }
+  
+  .add-to-bag-quantity button{
+    padding: 0;
+    margin: auto;
+    border-radius: 90%;
+    background-color: white;
+    color: black;
+    height: 40px;
+    width: 40px;
+  }
+  
+  .return-info-container, .Assembly-service-info-container, .warning-conatiner{
+    padding: 20px 0;
+  }
+  
+  .product-details-container-right-header{
+    display: flex;
+  }
+  
+  .assembly-service-info-container p{
+    margin-left: 20px;
+  }
+  
+  .unavailable-icon{
+    font-size: 16px;
+    color: grey;
+  }
+  #exclusion-info{
+    font-size: 12px;
+    color: grey;
+  }
+  
+  
+  .registerProduct{
+    width: 80%;
+    margin: 100px auto;
+  }
+  

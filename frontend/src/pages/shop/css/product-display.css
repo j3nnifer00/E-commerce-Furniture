@@ -1,0 +1,19 @@
+.product-display{
+    width: 60%;
+}
+
+.product-photos{
+    text-align: center;
+  }
+  
+  .product-photos img{
+    min-width: none;
+    max-width: 600px;
+    justify-content: space-between;
+    padding: 4px;
+  }
+
+  
+  .product-details, .measurements, .reviews{
+    margin: 40px;
+  }

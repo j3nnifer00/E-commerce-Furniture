@@ -1,0 +1,111 @@
+:root {
+  --primary-color: #f9f9f9; /* 기본 배경색 */
+  --button-color: #000; /* 버튼 글자색 */
+}
+
+header {
+  background-color: #fff; /* 배경색 */
+}
+
+.container {
+  display: flex;
+  justify-content: space-between; /* 좌우 정렬 */
+  align-items: center;
+  padding: 10px 20px; /* 패딩 추가 */
+}
+
+
+.logo {
+  flex-grow: 1; /* 로고가 남은 공간을 차지하도록 설정 */
+  text-align: center; /* 텍스트 중앙 정렬 */
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+}
+
+.navigation-link {
+  padding: 10px;
+}
+
+/* 기본 Navbar 링크 */
+#home {
+  font-weight: 600;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.logo img {
+  width: 60px;
+}
+
+.shopping-cart-icon{
+  margin-right: 20px;
+}
+
+/* 햄버거 버튼 스타일 */
+.hamburger {
+  display: none; /* 기본적으로 숨김 */
+  cursor: pointer;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: #000;
+}
+
+.hamburger:focus {
+  outline: none;
+}
+
+/* 로그인 버튼 스타일 */
+.login-register-btn {
+  display: inline; /* 기본적으로 보이게 설정 */
+}
+
+/* 로그인 아이콘 숨기기 */
+.login-icon {
+  display: none; /* 기본적으로 숨김 */
+}
+
+/* 작은 화면에서 햄버거 버튼 보이기 */
+@media (max-width: 900px) {
+  .navigation-link {
+    display: none; /* 기본적으로 숨김 */
+  }
+
+  .hamburger {
+    display: block; /* 햄버거 버튼 보이기 */
+  }
+
+  .navigation {
+    display: none; /* 기본적으로 숨김 */
+  }
+
+  .dropdown.active {
+    display: flex; /* 메뉴가 열리면 보이도록 */
+    flex-direction: column; /* 세로로 나열 */
+    position: absolute; /* 위치 조정 */
+    top: 60px; /* 헤더 아래로 위치 조정 */
+    left: 0; /* 왼쪽 정렬 */
+    width: 100%; /* 너비 100% */
+    background-color: var(--primary-color); /* 배경색 */
+    z-index: 1; /* 다른 요소 위로 */
+  }
+
+  .login-register-btn {
+    display: none; /* 작은 화면에서 숨김 */
+  }
+
+  .login-icon {
+    display: inline; /* 작은 화면에서 아이콘 보이기 */
+    cursor: pointer; /* 커서 변경 */
+  }
+}

@@ -1,0 +1,59 @@
+.registerProduct {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  .registerProduct form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .registerProduct label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .registerProduct input[type="text"],
+  .registerProduct input[type="number"],
+  .registerProduct input[type="file"],
+  .registerProduct select {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .registerProduct input[type="file"] {
+    padding: 5px;
+  }
+  
+  .registerProduct input[type="checkbox"] {
+    margin-left: 10px;
+  }
+  
+  .registerProduct input[type="submit"] {
+    background-color: #769496;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .registerProduct .error {
+    margin-top: 10px;
+    color: red;
+    font-weight: bold;
+    font-size: 14px;
+  }
+  

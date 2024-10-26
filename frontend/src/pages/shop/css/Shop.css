@@ -1,0 +1,46 @@
+
+/* product collection page (all products) */
+.shop{
+  width: 80%;
+  margin: auto;
+  padding-top: 40px;
+}
+  
+
+/* meterbar */
+.show-result-container{
+  padding-top: 20px;
+  width: 20%;
+  margin: auto;
+  text-align: center;
+}
+
+.show-result-container p{
+  font-size: 14px;
+  font-weight: 100;
+  color: rgb(80, 80,);
+}
+
+.show-result-container meter{
+  width: 200px;
+  height: 10px;
+  background-size: 100% 100%;
+}
+
+.show-result-meterbar{
+  border-radius: 40px;
+  background-color: rgb(204, 204, 204);
+  height: 2px; 
+  margin-bottom: 20px;
+  
+}
+.show-result-meterbar-color{
+  border-radius: 40px;
+  background-color: var(--primary);
+  width:20%;
+  height: 2px;
+}
+
+.error {
+  color: red;
+}

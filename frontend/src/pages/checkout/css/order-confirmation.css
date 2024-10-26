@@ -1,0 +1,41 @@
+.order-confirmation {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #f9f9f9; /* Light gray background */
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.order-details {
+    background-color: #ffffff; /* White background for details */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.order-details p {
+    margin: 10px 0;
+}
+
+.order-details h2,
+.order-details h3,
+.order-details h4 {
+    color: #007bff; /* Bootstrap primary color for headers */
+}
+
+ul {
+    list-style-type: none; /* Remove default list styling */
+    padding: 0;
+}
+
+ul li {
+    padding: 5px 0;
+    border-bottom: 1px solid #ddd; /* Separator between items */
+}
