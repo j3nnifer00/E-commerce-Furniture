@@ -4,7 +4,7 @@
 import { useState } from "react";
 import { useLogin } from "../../hooks/useLogin";
 import { Link, useNavigate } from "react-router-dom";
-import "./auth.css"
+import "./css/auth.css"
 
 
 const Login = () => {

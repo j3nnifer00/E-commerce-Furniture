@@ -4,7 +4,7 @@
 import { useState } from "react";
 import { useSignup } from "../../hooks/useSignup";
 import { useNavigate } from "react-router-dom"; // useNavigate를 import 합니다.
-import "./auth.css"
+import "./css/auth.css"
  
 
 const Signup = () => {
