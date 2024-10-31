@@ -38,6 +38,9 @@ nav {
   display: flex;
   align-items: center;
 }
+.my-orders {
+  margin: 10px;
+}
 .logo {
   display: flex;
   align-items: center;

@@ -8,9 +8,9 @@ export const ProductItem = (props) => {
 
     return (
         <div className='product-item'>
-            <Link to={`/product/${_id}`} style={{ textDecoration: 'none' }}>
+            <Link to={`/shop/product/${_id}`} style={{ textDecoration: 'none' }}>
             <div className="product-card">
-                <img src={image}/>
+                <img src={`${image}`}/>
                 <div className="description">
                     <p className="product-name">{name}</p>
                     <p className="product-price">${price}</p>

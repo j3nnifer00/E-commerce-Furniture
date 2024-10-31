@@ -6,7 +6,7 @@ export const ProductDisplay = ({ product }) => {
         
         <div className="product-photos">  
         {product.image ? (
-            <img src={`../${product.image}`}></img>
+            <img src={`../../${product.image}`}></img>
         ) : (
             <p>No image available</p>
         )}

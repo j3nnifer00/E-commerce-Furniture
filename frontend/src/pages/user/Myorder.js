@@ -10,11 +10,13 @@ export const Myorder = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        if (!user) {
-            navigate("/")
+        if (user) {
+            fetchOrders();
+        } else {
+            navigate("/");
         }
-        fetchOrders();
     }, [user]);
+    
 
     const fetchOrders = async () => {
         if (user && user.token) { // user와 token이 존재하는 경우에만 요청
@@ -54,7 +56,7 @@ export const Myorder = () => {
                             <div className="order-products">
                                 {order.orderItems.map((item, index) => (
                                     <div key={index} className="order-product">
-                                        <img src={item.product.image} alt={item.product.name} className="product-image"/>
+                                        <img src={`../${item.product.image}`} alt={item.product.name} className="product-image"/>
                                         <h3 className="product-name">{item.product.name}</h3>
                                         <p className="product-price">Price: ${item.price}</p>
                                         <p className="product-quantity">Quantity: {item.quantity}</p>

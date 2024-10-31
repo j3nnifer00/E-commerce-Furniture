@@ -161,7 +161,7 @@ const getAllUserOrders = async (req, res) =>{
             populate: {
                     path: 'product', 
                     select: 'name image'}
-        }).sort('dateOrdered');
+        }).sort('-dateOrdered');
 
         res.status(200).json({ success: true, orderList });
     }catch (error) {

@@ -1,98 +1,101 @@
+/* 전체 페이지 레이아웃 */
 .myorder {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #f9f9f9;
+    background-color: #ffffff;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .myorder-title {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 20px;
+    font-size: 28px;
     color: #333;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
+/* 주문 목록 */
 .order-list {
     list-style: none;
     padding: 0;
-}
-
-.order-item {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin-bottom: 15px;
-    padding: 15px;
-    transition: box-shadow 0.3s;
-}
-
-.order-item:hover {
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-}
-
-.order-id {
-    font-size: 1.5rem;
-    color: #007bff;
     margin: 0;
 }
 
+.order-item {
+    border-bottom: 1px solid #ddd;
+    padding: 15px 0;
+    margin-bottom: 15px;
+}
+
+.order-id {
+    font-size: 20px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+/* 주문 상품 섹션 */
 .order-products {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: 15px;
 }
 
 .order-product {
-    flex: 1 1 calc(33.333% - 10px); /* 3 products per row */
-    background-color: #f1f1f1;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 10px;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
 .product-image {
-    max-width: 100%;
-    height: auto;
-    border-radius: 5px;
+    width: 80px;
+    height: 80px;
+    border-radius: 4px;
+    object-fit: cover;
+    border: 1px solid #ddd;
 }
 
-.order-product .product-name {
-    font-weight: bold;
-    margin: 10px 0;
-    color: #555;
+.product-name {
+    font-size: 18px;
+    margin: 0;
 }
 
-.order-product .product-price {
-    color: #28a745;
+.product-price,
+.product-quantity {
+    margin: 5px 0;
+    color: #777;
 }
 
-.order-product .product-quantity {
-    color: #6c757d;
-}
-
+/* 주문 총 가격, 상태 및 날짜 */
 .order-total {
     font-weight: bold;
-    font-size: 1.2rem;
-    color: #dc3545; /* Red color for total price */
-}
-
-.order-status {
-    margin: 5px 0;
-    font-style: italic;
-}
-
-.order-date {
-    color: #6c757d;
-    font-size: 0.9rem;
+    font-size: 18px;
+    color: #333;
     margin-top: 10px;
 }
 
-/* Loading message styles */
-.loading-message {
-    text-align: center;
-    font-size: 1.5rem;
+.order-status {
     color: #007bff;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.order-date {
+    color: #888;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+/* 로딩 및 에러 메시지 */
+.loading,
+.error {
+    text-align: center;
+    font-size: 18px;
+    color: #555;
+}
+
+.error {
+    color: #dc3545;
+    font-weight: bold;
+    margin-bottom: 20px;
 }

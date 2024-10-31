@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 
+import AdminNavbar from './AdminNavbar';
+
 const Admin = () => {
 
     const [allProducts, setAllProducts] = useState([]); // State to hold featured products
@@ -56,6 +58,7 @@ const Admin = () => {
 
     return (
     <div className="admin-pannel">
+        <AdminNavbar />
         <div className="register-product"><Link to="/registerProduct"><button>Register new product</button></Link></div>
         <div className="product-list">
                 <div className="product-items-container">

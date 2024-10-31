@@ -145,7 +145,7 @@ const Checkout = () => {
             if (result.success === true) {
                 clearCart();
                 alert('Checkout successful!');
-                navigate('/orderConfirmation', { state: { order: result } });
+                navigate('/checkout/orderConfirmation', { state: { order: result } });
             }
         } catch (error) {
             setError(error.message || 'Failed to complete checkout. Please try again.');

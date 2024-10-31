@@ -5,6 +5,7 @@ import logo from  "../assets/serene-space-logo.png"
 
 // Hooks
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useLogout } from "../hooks/useLogout";
 import { useAuthContext } from "../hooks/useAuthContext";
 
@@ -17,10 +18,12 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const { logout } = useLogout();
   const { user } = useAuthContext();
+  const navigate = useNavigate();
 
   // Handler Functions
   const handleClick = () => {
     logout();
+    navigate("/");
   };
 
   const toggleMenu = () => {
@@ -51,16 +54,16 @@ const Navbar = () => {
 
 
         <nav>
-          <Link to='/cart'><div className="shopping-cart-icon"><CiShoppingBasket size={32}/></div></Link>
+          <Link to='/checkout/cart'><div className="shopping-cart-icon"><CiShoppingBasket size={32}/></div></Link>
           {user && (
             <div>
-              <Link to={`/myOrders`}><span>My orders</span></Link>
+              <Link to={`/user/myOrders`}><span className="my-orders">My orders</span></Link>
               <button onClick={handleClick}>Logout</button>
             </div>
           )}
           {!user && (
             <div>
-              <Link to="/login">
+              <Link to="/user/login">
                 <button className="login-register-btn">
                   LOGIN / REGISTER
                 </button>
