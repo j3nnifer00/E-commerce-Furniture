@@ -26,6 +26,12 @@ app.use(morgan('tiny'));
 app.use(express.json());
 app.use(express.static('public'));
 
+app.use(express.static(path.join(__dirname, 'build')));
+
+app.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
+
 
 
 const apiURL = process.env.API_URL;

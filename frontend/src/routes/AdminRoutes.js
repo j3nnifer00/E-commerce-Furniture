@@ -11,7 +11,7 @@ import RegisterProduct from '../pages/admin/RegisterProduct';
 const AdminRoutes = () => {
     return (
         <Routes>
-            <Route path="/dashboard" element={<AdminDashboard />} />
+            <Route path="/" element={<AdminDashboard />} />
             <Route path="/orders" element={<ManageOrders />} />
             <Route path="/users" element={<ManageUsers />} />
             <Route path="/products" element={<ManageProducts />} />

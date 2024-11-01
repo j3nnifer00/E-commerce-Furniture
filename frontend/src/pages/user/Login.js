@@ -40,7 +40,7 @@ const Login = () => {
           onChange={(e) => setPassword(e.target.value)}
           value={password}
         />
-        <Link to="/signup" style={{ textDecoration: 'none', color: 'black' }}>
+        <Link to="/user/signup" style={{ textDecoration: 'none', color: 'black' }}>
           <p>No account?</p>
         </Link>
         <button disabled={isLoading}>Login</button>

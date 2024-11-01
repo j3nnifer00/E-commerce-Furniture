@@ -15,7 +15,6 @@ export const useLogout = () => {
     authDispatch({ type: "LOGOUT" }); // Dispatch logout action
     //workoutsDispatch({ type: "SET_WORKOUTS", payload: null }); // Dispatch function to clear the workouts global states
     alert('logged out')
-    window.location.reload();
   };
 
   return { logout };
