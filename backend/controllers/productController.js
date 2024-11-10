@@ -19,15 +19,29 @@ const getProducts = async(req, res) => {
         filter._id = { $in: ids }; // MongoDB의 $in 연산자를 사용하여 해당 ID 목록에 있는 상품만 반환
     }
 
+    const page = parseInt(req.query.page) || 1;
+    const limit = parseInt(req.query.limit) || 10;
 
     try {
-        const productList = await Product.find(filter).populate('category');
+        const productList = await Product.find(filter)
+        .skip((page - 1) * limit) // 페이지에 맞게 건너뛰기
+        .limit(limit)             // 페이지당 아이템 수 제한
+        .populate('category');;
 
         if (!productList || productList.length === 0) {
             return res.status(404).json({ success: false, message: 'No products found.' });
         }
 
-        res.status(200).json(productList);
+        // 전체 제품 수를 구하여, "더보기" 버튼을 위한 상태 정보 추가
+        const totalCount = await Product.countDocuments(filter);
+
+        res.status(200).json({
+            products: productList,
+            totalCount: totalCount,
+            totalPages: Math.ceil(totalCount / limit),
+            currentPage: page,
+        });
+
     } catch (error) {
         console.error('Error fetching products:', error);
         res.status(500).json({ success: false, message: 'Server error' });

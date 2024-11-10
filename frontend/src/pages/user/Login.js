@@ -46,11 +46,13 @@ const Login = () => {
         <button disabled={isLoading}>Login</button>
         <hr />
         {error && <div className="error">{error}</div>}
+        <div className="googleLogin-btn">
+          <a href={getGoogleOAuthURL()}>
+            <img src={require("../../assets/google-logo.png")} className="google-login-logo" alt="Google logo" /> Login with Google
+          </a>
+        </div>
       </form>
 
-      <a href={getGoogleOAuthURL()}>
-        <img src={require("../../assets/google-logo.png")} className="google-login-logo" alt="Google logo" /> Login with Google
-      </a>
     </div>
   );
 };

@@ -84,7 +84,7 @@ async function googleOAuthHandler (req, res) {
     // Step 5: 로그인 성공 시 이메일과 JWT 토큰 전송
     
     // 예: 서버에서 리디렉션
-    res.redirect(`http://localhost:3000/user/google-login/?token=${token}&email=${googleUser.email}&isAdmin=${user.isAdmin}`);
+    res.redirect(`${process.env.CLIENT_ENDPOINT}/user/google-login/?token=${token}&email=${googleUser.email}&isAdmin=${user.isAdmin}`);
 
 
 

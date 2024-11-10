@@ -148,17 +148,6 @@ const Signup = () => {
         />
       </div>
 
-      <div>
-        <label htmlFor="isAdmin">Is Admin:</label>
-        <input
-          type="checkbox"
-          id="isAdmin"
-          name="isAdmin"
-          checked={newUser.isAdmin}
-          onChange={handleChange}
-        />
-      </div>
-
       {/* Submit Button */}
       <button type="submit" disabled={isLoading}>
         {isLoading ? 'Signing up...' : 'Sign Up'}

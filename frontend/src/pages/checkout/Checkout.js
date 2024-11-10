@@ -39,6 +39,9 @@ const Checkout = () => {
         fetchProducts();
     }, [user, cartItems]);
 
+
+
+
     const fetchUser = async() => {
 
         try {
@@ -89,6 +92,9 @@ const Checkout = () => {
         }
     };
 
+
+
+    
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData((prevData) => ({ ...prevData, [name]: value }));

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
+import './css/admin.css'
 
 import AdminNavbar from './AdminNavbar';
 
@@ -18,7 +19,8 @@ const Admin = () => {
         
             const data = await response.json();  // Use await to get the resolved data from the Promise
 
-            setAllProducts(data);
+
+            setAllProducts(data.products);
 
 
         } catch (error) {
@@ -59,23 +61,24 @@ const Admin = () => {
     return (
     <div className="admin-pannel">
         <AdminNavbar />
-        <div className="register-product"><Link to="/registerProduct"><button>Register new product</button></Link></div>
-        <div className="product-list">
-                <div className="product-items-container">
+        <div className="admin-product-list">
+            <div className="register-product"><Link to="/admin/registerProduct"><button>Register new product</button></Link></div>
+        
+                <div className="admin-product-items-container">
                     {allProducts.length > 0 ? (
                         allProducts.map(product => (
-                            <div className="product-item" id={`product-${product._id}`}>
+                            <div className="admin-product-item" id={`product-${product._id}`}>
                                 {product.image && product.image.length > 0 ? (
                                 <img src={`/${product.image}`} alt={`product${product._id}`} />
                                 ) : (
                                 <p>No image available</p>
                                 )}
-                                <div className="product-item-cover-header">
+                                <div className="admin-product-item-cover-header">
                                 <p className="product-name">{product.name}</p>
                                 <p className="product-price">${product.price}</p>
                                 <p>stock: {product.countInStock}</p>
                                 </div>
-                                <Link to={`/registerProduct/${product._id}`}><button id="product-edit-btn">edit</button></Link>
+                                <Link to={`/admin/registerProduct/${product._id}`}><button id="product-edit-btn">edit</button></Link>
                                 <button id="product-delete-btn" onClick={() => handleDelete(product._id)}>delete</button>
                             </div>
                         ))

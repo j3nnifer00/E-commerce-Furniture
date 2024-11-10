@@ -21,7 +21,7 @@ export const Myorder = () => {
     const fetchOrders = async () => {
         if (user && user.token) { // user와 token이 존재하는 경우에만 요청
             try {
-                const response = await fetch(`/api/v1/orders/get/userOrders/`, {
+                const response = await fetch(`${process.env.REACT_APP_API_URL}/api/v1/orders/get/userOrders/`, {
                     headers: {
                         Authorization: `Bearer ${user.token}`,
                     },
