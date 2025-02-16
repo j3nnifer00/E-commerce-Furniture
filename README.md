@@ -9,7 +9,7 @@ A **MERN stack e-commerce web app** built as a practice project.
 
 ### **Frontend**  
 - Built with **React.js** to create an interactive and responsive UI.  
-- The design is inspired by [this Dribbble](https://dribbble.com/shots/21218249-Homey-eCommerce-Furniture-Landing-page).  
+- The design is inspired by https://dribbble.com/shots/21218249-Homey-eCommerce-Furniture-Landing-page
 
 
 ### Tools ###
