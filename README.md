@@ -1,18 +1,53 @@
-A **MERN stack e-commerce web app** built as a practice project.  
+# 🛋️ MERN Stack E-commerce Web App
 
-### **Backend**  
-- Developed using **Express.js** to build the API server, deployed on **AWS EC2**.  
-- Implements **RESTful APIs** to support CRUD operations for users, products, orders, and featured products.  
-- Integrated **Google OAuth** authentication alongside a custom login system.  
-- **Exception handling**: Secure access control (e.g., users cannot access the "My Orders" page directly via URL; token validation is enforced, and unauthorized users are redirected to the login page).  
-- Utilises **MongoDB** as the database.  
-
-### **Frontend**  
-- Built with **React.js** to create an interactive and responsive UI.  
-- The design is inspired by https://dribbble.com/shots/21218249-Homey-eCommerce-Furniture-Landing-page
+A **furniture e-commerce web application** built as a practice project using the **MERN stack** (MongoDB, Express.js, React.js, Node.js).
 
 
-### Tools ###
-- PostmanAPI
-- Figma
-- VSCode
+
+## Backend
+
+- Developed with **Express.js**, deployed on **AWS EC2** as a RESTful API server.  
+- Supports full **CRUD operations** for users, products, orders, and featured items.  
+- **Authentication**:  
+  - Implements **Google OAuth** alongside a custom email/password login system.  
+  - Secure route access via **JWT token validation** (e.g., users cannot access "My Orders" directly via URL without valid authentication).  
+- Uses **MongoDB** for data storage and schema design.  
+- Includes robust **error and exception handling** to ensure secure and stable operation.
+
+
+
+## Frontend
+
+- Built with **React.js**, creating a responsive and dynamic user interface.  
+- UI design inspired by this [Dribbble concept](https://dribbble.com/shots/21218249-Homey-eCommerce-Furniture-Landing-page).  
+- Features intuitive navigation, product filtering, and a modern shopping experience.
+
+
+## 🛠️ Tools & Technologies
+
+- **Postman** – API testing and debugging  
+- **Figma** – UI reference and prototyping  
+- **VS Code** – Development environment
+
+
+
+## 🚀 Deployment
+
+- **Frontend** hosted via **AWS S3** static web hosting function as it is a single-page React app and to stay within the free tier  
+- **Backend** deployed on **AWS EC2**
+
+
+## 🧠 Lessons Learned
+
+- Implementing RESTful APIs
+- Implementing secure user authentication and protected routes  
+- Structuring a full-stack project and deploying it on the cloud  
+- Integrating external authentication (Google OAuth)
+
+
+## ✨ Future Improvements
+
+- Add payment integration (Stripe or PayPal)  
+- Enhance admin dashboard features  
+- Add product reviews and user profiles
+
