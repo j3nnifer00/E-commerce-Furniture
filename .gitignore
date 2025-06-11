@@ -3,6 +3,7 @@ node_modules/
 build/
 
 # Ignore specific files
+.DS_Store
 .env
 logs/*.log
 example-db-orm.png
