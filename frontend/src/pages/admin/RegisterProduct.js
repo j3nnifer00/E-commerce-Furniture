@@ -24,7 +24,7 @@ const RegisterProduct = () => {
     useEffect(() => {
         const fetchCategories = async () => {
             try {
-                const response = await axios.get(`/api/v1/category`); // 카테고리 API 엔드포인트
+                const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/v1/category`); // 카테고리 API 엔드포인트
                 setCategories(response.data); // 카테고리 리스트 저장
             } catch (error) {
                 console.error('Error fetching categories:', error);
@@ -34,7 +34,7 @@ const RegisterProduct = () => {
         fetchCategories();
 
         if (productId) {
-            axios.get(`/api/v1/products/${productId}`)
+            axios.get(`${process.env.REACT_APP_API_URL}/api/v1/products/${productId}`)
                 .then((response) => {
                     const product = response.data;
                     setProductName(product.name);
@@ -74,7 +74,7 @@ const RegisterProduct = () => {
 
         try {
             if (productId) { // 수정 모드
-                await axios.put(`/api/v1/products/${productId}`, formData, {
+                await axios.put(`${process.env.REACT_APP_API_URL}/api/v1/products/${productId}`, formData, {
                     headers: { 'Content-Type': 'multipart/form-data' }
                 });
             } else { // 등록 모드

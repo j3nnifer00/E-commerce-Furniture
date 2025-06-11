@@ -1,16 +1,17 @@
 // File for Home Product page content
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link , useNavigate} from "react-router-dom";
 import { ProductItem } from "./shop/ProductItem.jsx";
 
 const Home = () => {
+    const navigate = useNavigate();
 
     const [featuredProducts, setFeaturedProducts] = useState([]); // State to hold featured products
   
 
     const fetchFeaturedProducts = async () => {
         try {
-            const response = await fetch(`/api/v1/products/get/featured/8`);
+            const response = await fetch(`${process.env.REACT_APP_API_URL}/api/v1/products/get/featured/8`);
             
             if (!response.ok) {
                 throw new Error('Failed to fetch products');
@@ -51,8 +52,8 @@ const Home = () => {
                         <p>originating from Indonsia, perfect for minimalist you at home</p>
                     </div>
                     <div className="main-img-btn">
-                        <button id="explore-btn">EXPLORE NOW</button>
-                        <button id="shop-btn">SHOP NOW - $120.86</button>
+                        <Link to='/shop'><button id="explore-btn">EXPLORE NOW</button></Link>
+                        <Link to='/shop/product/67315d755e285c0e2b1851a2'><button id="shop-btn">SHOP NOW - $120.86</button></Link>
                     </div>
                 </div>
             </div> 
@@ -86,7 +87,7 @@ const Home = () => {
                 <h1>It all arrived this week</h1>
                 <p>Furniture axe heirloom ethical man bun sustainable. Pickled normcore selvage,</p>
                 <p>bespoke four dollar toast neutra chartreuse vinyl.</p>
-                <button>DISCOVER OUR SHOP</button><br></br>
+                <Link to='/shop'><button on>DISCOVER OUR SHOP</button></Link><br></br>
                 <img src={require('../assets/second-banner-img.png')} alt="second-banner"/>
             </div>
         </div>

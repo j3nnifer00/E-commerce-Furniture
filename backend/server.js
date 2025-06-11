@@ -5,6 +5,8 @@ const express = require("express");
 const mongoose = require("mongoose");
 const morgan = require('morgan');
 const path = require('path')
+const cors = require('cors')
+const http = require('http')
 
 // Routes
 const productRoutes = require("./routes/productRoutes");
@@ -25,6 +27,7 @@ app.use(morgan('tiny'));
 app.use(express.json());
 app.use(express.static('public'));
 app.use(express.static(path.join(__dirname, 'build')));
+app.use(cors());
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
@@ -48,7 +51,9 @@ mongoose
   .then(() => {
 
     // Listen for requests
-    app.listen(process.env.PORT, () => {
+    http
+    .createServer(app)
+    .listen(process.env.PORT, () => {
       console.log(
         "Connected to database & Listening on port",
         process.env.PORT

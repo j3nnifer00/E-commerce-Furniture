@@ -6,6 +6,9 @@ export const ProductItem = (props) => {
 
     const { _id, name, price, image} = props.data;
 
+    console.log(props.data);
+    console.log(image);
+
     return (
         <div className='product-item'>
             <Link to={`/shop/product/${_id}`} style={{ textDecoration: 'none' }}>

@@ -33,7 +33,7 @@ const AdminRoutes = () => {
         // admin-only API 호출하여 관리자인지 확인
         const verifyAdmin = async () => {
             try {
-                const response = await fetch('/api/v1/admin/verify-admin', {
+                const response = await fetch(`${process.env.REACT_APP_API_URL}/api/v1/admin/verify-admin`, {
                     method: 'GET',
                     headers: {
                         Authorization: `Bearer ${token}`,

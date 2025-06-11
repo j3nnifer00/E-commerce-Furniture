@@ -19,8 +19,11 @@ const getProducts = async(req, res) => {
         filter._id = { $in: ids }; // MongoDB의 $in 연산자를 사용하여 해당 ID 목록에 있는 상품만 반환
     }
 
+
+    const totalCount = await Product.countDocuments(filter);
+
     const page = parseInt(req.query.page) || 1;
-    const limit = parseInt(req.query.limit) || 10;
+    const limit = parseInt(req.query.limit) || totalCount;
 
     try {
         const productList = await Product.find(filter)
@@ -33,7 +36,6 @@ const getProducts = async(req, res) => {
         }
 
         // 전체 제품 수를 구하여, "더보기" 버튼을 위한 상태 정보 추가
-        const totalCount = await Product.countDocuments(filter);
 
         res.status(200).json({
             products: productList,

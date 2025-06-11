@@ -11,7 +11,7 @@ const Admin = () => {
 
     const fetchAllProducts = async () => {
         try {
-            const response = await fetch(`/api/v1/products/`);
+            const response = await fetch(`${process.env.REACT_APP_API_URL}/api/v1/products/`);
             
             if (!response.ok) {
                 throw new Error('Failed to fetch products');
@@ -34,7 +34,7 @@ const Admin = () => {
         if(!confirmDelete) return;
 
         try{
-            const response = await fetch(`/api/v1/products/${id}`, {
+            const response = await fetch(`${process.env.REACT_APP_API_URL}/api/v1/products/${id}`, {
                 method: 'DELETE',
             });
 

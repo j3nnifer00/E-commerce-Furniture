@@ -13,12 +13,15 @@ const Cart = () => {
 
     const fetchCartProducts = async () => {
         try {
-            const response = await fetch(`/api/v1/products?ids=${productIds.join(',')}`);
+            const response = await fetch(`${process.env.REACT_APP_API_URL}/api/v1/products?ids=${productIds.join(',')}`);
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
             const data = await response.json();
-            setProducts(data);
+
+            console.log(data);
+
+            setProducts(data.products);
         } catch (error) {
             console.error('Error fetching products:', error);
             setError("Failed to load products.");

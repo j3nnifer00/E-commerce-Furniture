@@ -20,7 +20,7 @@ export const useSignup = () => {
     setError(null);
 
     // POST request for signup
-    const response = await fetch(`/api/v1/user/`, {
+    const response = await fetch(`${process.env.REACT_APP_API_URL}/api/v1/user/`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(user),

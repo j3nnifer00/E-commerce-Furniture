@@ -8,12 +8,12 @@ export const ProductList = (props) => {
     const [currentPage, setCurrentPage] = useState(1); // 현재 페이지
     const [loading, setLoading] = useState(false); // 로딩 상태
 
-    const limit = 2;
+    const limit = 8;
 
     const fetchProducts = async (page) => {
         setLoading(true); // 로딩 시작
         try {
-            const response = await fetch(`/api/v1/products?page=${page}&limit=${limit}`);
+            const response = await fetch(`${process.env.REACT_APP_API_URL}/api/v1/products?page=${page}&limit=${limit}`);
 
             if (!response.ok) {
                 throw new Error('Failed to fetch products');
