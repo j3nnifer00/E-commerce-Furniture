@@ -45,9 +45,8 @@ A **furniture e-commerce web application** built as a practice project using the
 - Integrating external authentication (Google OAuth)
 
 
-## ✨ Future Improvements
+## Future Improvements
 
-- Add payment integration (Stripe or PayPal)  
-- Enhance admin dashboard features  
-- Add product reviews and user profiles
+- Add payment integration (Stripe or PayPal)
+- Interactive sales dashboard for admins
 
