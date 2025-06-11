@@ -2,6 +2,20 @@
 
 A **furniture e-commerce web application** built as a practice project using the **MERN stack** (MongoDB, Express.js, React.js, Node.js).
 
+### Pages
+- Landing page
+- Products
+- Product Detail
+- Login
+- Sign in
+- My cart
+- Check out
+- Order Detail
+- My Orders
+- Admin
+  - Product Register
+  - All Orders
+
 
 
 ## Backend
