@@ -6,7 +6,7 @@ import { ProductItem } from "./shop/ProductItem.jsx";
 const Home = () => {
     const navigate = useNavigate();
 
-    console.log("testing environment variable 2:", process.env.REACT_APP_API_URL);
+    console.log("testing environment variable 3:", process.env.REACT_APP_API_URL);
 
     const [featuredProducts, setFeaturedProducts] = useState([]); // State to hold featured products
   
