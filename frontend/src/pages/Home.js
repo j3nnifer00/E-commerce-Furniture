@@ -6,6 +6,8 @@ import { ProductItem } from "./shop/ProductItem.jsx";
 const Home = () => {
     const navigate = useNavigate();
 
+    console.log("testing github action pipeline")
+
     const [featuredProducts, setFeaturedProducts] = useState([]); // State to hold featured products
   
 
