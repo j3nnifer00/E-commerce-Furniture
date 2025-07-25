@@ -31,7 +31,7 @@ jobs:
 
       - name: Deploy to S3
         run: |
-          aws s3 sync build/ s3://serne-spaces-react --delete
+          aws s3 sync build/ s3://serene-spaces-react --delete
 
       - name: Invalidate CloudFront cache
         run: |
