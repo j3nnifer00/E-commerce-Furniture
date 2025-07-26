@@ -29,9 +29,9 @@ jobs:
       - name: SSH and Deploy
         run: |
           ssh ec2-user@${{ secrets.EC2_HOST }} << 'EOF'
-          cd ~/E-commerce-Furniture/backend
-          git pull origin main
-          npm install --production
-          fuser -k 8080/tcp || true
-          nohup node server.js > output.log 2>&1 &
+            cd ~/E-commerce-Furniture/backend
+            git pull origin main
+            npm install --production
+            fuser -k 8080/tcp || true
+            nohup node server.js > output.log 2>&1 &
           EOF
