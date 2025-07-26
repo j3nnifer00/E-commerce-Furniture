@@ -1,3 +1,5 @@
+# .github/workflows/deploy-backend.yml
+
 name: Deploy Backend to EC2
 
 on:
@@ -5,28 +7,26 @@ on:
     paths:
       - 'backend/**'
       - '.github/workflows/deploy-backend.yml'
+    branches: [main]
 
 jobs:
   deploy:
-    name: Deploy Backend
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Setup SSH Key
+      - name: Add SSH key
         run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.EC2_KEY }}" > ~/.ssh/id_rsa
-          chmod 400 ~/.ssh/id_rsa
+          echo "${{ secrets.EC2_SSH_KEY }}" > key.pem
+          chmod 400 key.pem
 
-      - name: SSH and Deploy
+      - name: Deploy to EC2
         run: |
-          ssh -o StrictHostKeyChecking=no ec2-user@${{ secrets.EC2_HOST }} << 'EOF'
+          ssh -i key.pem -o StrictHostKeyChecking=no ec2-user@<YOUR_EC2_PUBLIC_IP> << 'EOF'
             cd ~/E-commerce-Furniture/backend
             git pull origin main
-            npm install
-            pkill node || true
-            nohup node server.js > output.log 2>&1 &
+            pkill -f "node server.js" || true
+            nohup node server.js > server.log 2>&1 &
           EOF

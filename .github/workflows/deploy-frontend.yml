@@ -1,17 +1,21 @@
+
 name: Deploy React App to S3 + CloudFront
 
 on:
-    push:
-        branches: [main]
+  push:
+    paths:
+      - 'frontend/**'
+      - '.github/workflows/deploy-frontend.yml'
+    branches: [main]
 
 defaults:
-    run:
-        working-directory: frontend
+  run:
+    working-directory: frontend
+
 env:
   REACT_APP_API_URL: ${{ secrets.REACT_APP_API_URL }}
   REACT_APP_GOOGLE_CLIENT_ID: ${{ secrets.REACT_APP_GOOGLE_CLIENT_ID }}
   REACT_APP_GOOGL_OAUTH_REDIRECT_URI: ${{ secrets.REACT_APP_GOOGL_OAUTH_REDIRECT_URI }}
-
 
 jobs:
   deploy:
