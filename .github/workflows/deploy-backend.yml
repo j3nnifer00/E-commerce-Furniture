@@ -9,21 +9,29 @@ on:
 
 jobs:
   deploy:
+    name: Deploy Backend
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Add SSH key
+      - name: Setup SSH key
         run: |
-          echo "${{ secrets.EC2_SSH_KEY }}" > key.pem
-          chmod 400 key.pem
+          mkdir -p ~/.ssh
+          echo "${{ secrets.EC2_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
 
-      - name: Deploy backend via SSH
+      - name: Add EC2 host to known_hosts
         run: |
-          ssh -i key.pem -o StrictHostKeyChecking=no ec2-user@13.54.211.80 <<EOF
-            cd ~/E-commerce-Furniture/backend
-            git pull origin main
-            pm2 restart ecommerce-api || nohup node server.js &
+          ssh-keyscan -H ${{ secrets.EC2_HOST }} >> ~/.ssh/known_hosts
+
+      - name: SSH and Deploy
+        run: |
+          ssh ec2-user@${{ secrets.EC2_HOST }} << 'EOF'
+          cd ~/E-commerce-Furniture/backend
+          git pull origin main
+          npm install --production
+          fuser -k 8080/tcp || true
+          nohup node server.js > output.log 2>&1 &
           EOF
