@@ -8,3 +8,5 @@ build/
 logs/*.log
 example-db-orm.png
 note.txt
+id_rsa_github
+id_rsa_github.save
