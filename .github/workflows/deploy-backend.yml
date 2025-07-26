@@ -1,0 +1,31 @@
+name: Deploy Backend to EC2
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: Deploy Backend
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup SSH Key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.EC2_KEY }}" > ~/.ssh/id_rsa
+          chmod 400 ~/.ssh/id_rsa
+
+      - name: SSH and Deploy
+        run: |
+          ssh -o StrictHostKeyChecking=no ${{ secrets.EC2_USERNAME }}@${{ secrets.EC2_HOST }} << 'EOF'
+            cd ~/E-commerce-Furniture/backend
+            git pull origin main
+            npm install
+            pkill node || true
+            nohup node server.js > output.log 2>&1 &
+          EOF
