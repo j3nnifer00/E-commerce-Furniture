@@ -34,7 +34,7 @@ app.get('/', function (req, res) {
 });
 
 
-console.log('testing env', process.env)
+console.log('testing env')
 
 
 const apiURL = process.env.API_URL;
