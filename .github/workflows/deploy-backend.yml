@@ -31,6 +31,22 @@ jobs:
           ssh ec2-user@${{ secrets.EC2_HOST }} << 'EOF'
             cd ~/E-commerce-Furniture/backend
             git pull origin main
+
+            # create .env file
+            cat <<EOT > .env
+            PORT=${{ secrets.ENV_PORT }}
+            API_URL=${{ secrets.ENV_API_URL }}
+            JWT_KEY=${{ secrets.ENV_JWT_KEY }}
+            MONGO_URI=${{ secrets.ENV_MONGO_URI }}
+            GOOGLE_CLIENT_ID=${{ secrets.ENV_GOOGLE_CLIENT_ID }}
+            GOOGLE_CLIENT_SECRET=${{ secrets.ENV_GOOGLE_CLIENT_SECRET }}
+            GOOGLE_OAUTH_REDIRECT_URI=${{ secrets.ENV_GOOGLE_OAUTH_REDIRECT_URI }}
+            AWS_ACCESS_KEY_ID=${{ secrets.ENV_AWS_ACCESS_KEY_ID }}
+            AWS_SECRET_ACCESS_KEY=${{ secrets.ENV_AWS_SECRET_ACCESS_KEY }}
+            AWS_REGION=${{ secrets.ENV_AWS_REGION }}
+            CLIENT_ENDPOINT=${{ secrets.ENV_CLIENT_ENDPOINT }}
+          EOT
+
             npm install --production
             fuser -k 8080/tcp || true
             nohup node server.js > output.log 2>&1 &
