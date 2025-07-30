@@ -45,14 +45,19 @@ const Home = () => {
                     <h1>SereneSpaces Collection Minimalist 2024</h1>
                 </div>
 
+                <div className="empty-div"></div>
+
                 <div className="main-image-detail-container">
                     <div className="main-img-info">
-                        <p>Mauris Collection - Collection made from teak wood</p>
-                        <p>originating from Indonsia, perfect for minimalist you at home</p>
+                        <p>The Soft Modern Edit - Warm tones. Strong lines. Quiet confidence</p>
+                        <br />
+                        <p>A curated collection where form meets function, and aesthetics meet emotion.
+From sculptural seating to ambient light and analog sound,
+discover pieces that bring quiet harmony to your everyday.</p>
                     </div>
                     <div className="main-img-btn">
                         <Link to='/shop'><button id="explore-btn">EXPLORE NOW</button></Link>
-                        <Link to='/shop/product/67315d755e285c0e2b1851a2'><button id="shop-btn">SHOP NOW - $120.86</button></Link>
+                        <Link to='/shop/collection'><button id="shop-btn">SHOP NOW</button></Link>
                     </div>
                 </div>
             </div> 

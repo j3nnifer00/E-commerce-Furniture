@@ -37,11 +37,17 @@ const Navbar = () => {
           <CiMenuBurger />
         </button>
 
-
-        <div className={`dropdown ${menuOpen ? "active" : ""}`}a>
+        <div className="navigation-links">
           <Link to="/"><span className="navigation-link" id="home">Home</span></Link>
           <Link to="/shop"><span className="navigation-link">Shop</span></Link>
           <Link to="/shop/collection"><span className="navigation-link">Collection</span></Link>
+        </div>
+
+
+        <div className={`dropdown ${menuOpen ? "active" : ""}`}>
+          <Link to="/"><span className="dropdown-link" id="home">Home</span></Link>
+          <Link to="/shop"><span className="dropdown-link" >Shop</span></Link>
+          <Link to="/shop/collection"><span className="dropdown-link" >Collection</span></Link>
         </div>
 
 
