@@ -50,6 +50,9 @@ const productSchema = new Schema(
     },
     isFeatured: {
       type: Boolean
+    },
+    isCollection:{
+      type: Boolean
     }
   },
   { timestamps: true } // Keep track of when product is registered

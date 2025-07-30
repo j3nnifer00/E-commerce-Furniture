@@ -89,7 +89,6 @@ const ProductAddToCart = ({ product }) => {
         <div className="delivery-method-container">
           <div className="delivery-method-label">
             <h4>How to get it</h4>
-            <span className="change-store-btn">Change store</span>
           </div>
 
           <div className="delivery-method-availability">
@@ -101,7 +100,10 @@ const ProductAddToCart = ({ product }) => {
               <div className="package-delivery-body">
                 <p>
                   <span className="material-symbols-outlined available-icon">circle</span>
-                  Available
+                  <p>
+                    <span className="material-symbols-outlined unavailable-icon">block</span>
+                    Currently unavailable
+                  </p>
                 </p>
               </div>
             </div>
@@ -161,7 +163,7 @@ const ProductAddToCart = ({ product }) => {
           </div>
           <p>
             <span className="material-symbols-outlined unavailable-icon">block</span>
-            Information currently unavailable
+            Currently unavailable
           </p>
         </div>
         <div className="warning-conatiner">

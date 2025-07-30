@@ -43,7 +43,6 @@ const Home = () => {
             <div className="main-image-container">
                 <div className="main-image">
                     <h1>SereneSpaces Collection Minimalist 2024</h1>
-                    <img src={require("../assets/main-img.png")} alt="main"/>
                 </div>
 
                 <div className="main-image-detail-container">

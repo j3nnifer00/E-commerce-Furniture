@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const authenticator = require('../middleware/requireAuth.js');
 
-const { getProducts, getSingleProduct, postProduct, updateProduct, deleteProduct, putProductGalleryImages, getFeaturedProudcts, getProductsCount} = require('../controllers/productController');
+const { getProducts, getSingleProduct, postProduct, updateProduct, deleteProduct, putProductGalleryImages, getFeaturedProudcts, getCollectionProducts, getProductsCount} = require('../controllers/productController');
 const upload = require('../middleware/uploadProductImage.js');
 
 // GET all products
@@ -26,6 +26,8 @@ router.put('/gallery-images/:id', putProductGalleryImages)
 
 // GET featured products
 router.get('/get/featured/:count', getFeaturedProudcts), 
+
+router.get('/get/collection', getCollectionProducts), 
 
 // GET products count
 router.get('/get/count', getProductsCount)

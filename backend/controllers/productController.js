@@ -2,7 +2,7 @@ const Product = require('../models/productModel');
 const { Category } = require('../models/categoryModel');
 
 const mongoose = require('mongoose');
-constpath = require('path');
+const path = require('path');
 
 
 // get all products
@@ -90,20 +90,24 @@ const postProduct = async (req, res) => {
             return res.status(400).json({ error: 'Please fill in all fields', emptyFields });
         }
 
+        console.log("req.file:", req.file)
         // Create the product
         const product = await Product.create({
             name: req.body.name,
             description: req.body.description,
             richDescription: req.body.richDescription,
-            image: req.file ? `ProductImages/${req.file.filename}` : '',
+            image: req.file ? req.file.key : '',
             brand: req.body.brand,
             price: req.body.price,
             category: req.body.category,
             countInStock: req.body.countInStock,
             rating: req.body.rating,
             numReviews: req.body.numReviews,
-            isFeatured: req.body.isFeatured
+            isFeatured: req.body.isFeatured,
+            isCollection: req.body.isCollection
         });
+        
+        console.log('Product created:', product); // Log the created product for debugging
 
         return res.status(201).json({ success: true, product: product }); // Use 201 for created
     } catch (error) {
@@ -191,7 +195,8 @@ const updateProduct = async (req, res) => {
             countInStock: req.body.countInStock,
             rating: req.body.rating,
             numReviews: req.body.numReviews,
-            isFeatured: req.body.isFeatured
+            isFeatured: req.body.isFeatured,
+            isCollection: req.body.isCollection
         },
         {new: true})
     }catch(err){
@@ -234,10 +239,26 @@ const getFeaturedProudcts = async (req, res) => {
 
     res.send(products)
 }
+
+const getCollectionProducts = async (req, res) => {
+  try {
+    const products = await Product.find({ isCollection: true });
+
+    if (products.length === 0) {
+      return res.status(200).json({ success: false, message: 'No collection products found' });
+    }
+
+    return res.status(200).json({ success: true, data: products });
+  } catch (error) {
+    return res.status(500).json({ success: false, message: 'Server error', error: error.message });
+  }
+};
  
 const putProductGalleryImages = async (req, res) => {
     return res.json({message: 'put product gallery images API'})
 }
+
+
 
 
 
@@ -251,5 +272,6 @@ module.exports = {
     deleteProduct,
     putProductGalleryImages,
     getFeaturedProudcts,
+    getCollectionProducts,
     getProductsCount
 };

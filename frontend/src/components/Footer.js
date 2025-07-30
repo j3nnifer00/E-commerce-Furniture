@@ -55,7 +55,6 @@ const Footer = () => {
             <hr></hr>
             <div className="copyright">
                 &copy; 2024 SereneSpaces. Site by Jenn <br />
-                Design from Elux Space. https://dribbble.com/shots/21218249-Homey-eCommerce-Furniture-Landing-page
             </div>
 
         </footer>

@@ -41,9 +41,7 @@ const Navbar = () => {
         <div className={`dropdown ${menuOpen ? "active" : ""}`}a>
           <Link to="/"><span className="navigation-link" id="home">Home</span></Link>
           <Link to="/shop"><span className="navigation-link">Shop</span></Link>
-          <span className="navigation-link">Promotion</span>
-          <span className="navigation-link">Inspiration</span>
-          <span className="navigation-link">Buy</span>
+          <Link to="/shop/collection"><span className="navigation-link">Collection</span></Link>
         </div>
 
 

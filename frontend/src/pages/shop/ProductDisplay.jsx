@@ -13,7 +13,7 @@ export const ProductDisplay = ({ product }) => {
         </div>
         <div className="product-details">  
             <h2>Product details</h2>
-            <p>{product.description}</p>
+            <p>{product.richDescription}</p>
         </div>
         <div className="measurements">
             <h2>Measurements</h2>

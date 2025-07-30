@@ -18,6 +18,7 @@ const RegisterProduct = () => {
     const [productRating, setProductRating] = useState(0);
     const [productReviewsNum, setProductReviewNums] = useState(0);
     const [productFeatured, setProductFeatured] = useState(false);
+    const [productCollection, setProductCollection] = useState(false);
     const [error, setError] = useState(null);
     const [categories, setCategories] = useState([]);
 
@@ -47,6 +48,7 @@ const RegisterProduct = () => {
                     setProductRating(product.rating);
                     setProductReviewNums(product.numReviews);
                     setProductFeatured(product.isFeatured);
+                    setProductCollection(product.isCollection);
                 })
                 .catch((error) => setError("Error fetching product data"));
         }
@@ -66,6 +68,7 @@ const RegisterProduct = () => {
         formData.append('rating', productRating);
         formData.append('numReviews', productReviewsNum);
         formData.append('isFeatured', productFeatured);
+        formData.append('isCollection', productCollection);
 
         // 이미지 파일들 추가
         for (let i = 0; i < productImages.length; i++) {
@@ -95,6 +98,7 @@ const RegisterProduct = () => {
             setProductRating(0);
             setProductReviewNums(0);
             setProductFeatured(false);
+            setProductCollection(false);
             setError(null);
 
             navigate('/admin');
@@ -203,6 +207,14 @@ const RegisterProduct = () => {
                     onChange={(e) => setProductFeatured(e.target.checked)}
                     checked={productFeatured}
                 />
+                <label htmlFor="productCollection">Register as collection product?</label>
+                <input
+                    type="checkbox"
+                    id="productCollection"
+                    name="isCollection"
+                    onChange={(e) => setProductCollection(e.target.checked)}
+                    checked={productCollection}
+                /> 
                 <input type="submit" value="Submit" />
                 {error && <div className="error">{error}</div>}
             </form>
