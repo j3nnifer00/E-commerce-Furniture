@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const path = require('path');
 
 
+
 // get all products
 const getProducts = async(req, res) => {
     //localhost:3000/api/v1/products?categories=2424, 98493
